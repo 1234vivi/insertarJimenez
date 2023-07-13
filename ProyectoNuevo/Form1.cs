@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -90,6 +91,7 @@ namespace ProyectoNuevo
                             command.Parameters.AddWithValue("@id_tipo", id_tipo);
                             command.Parameters.AddWithValue("@id_Razones", id_razones);
                             command.ExecuteNonQuery();
+                            Console.WriteLine("holakease");
                         }
                     }
 
@@ -101,7 +103,15 @@ namespace ProyectoNuevo
                 MessageBox.Show("Error al insertar los registros: " + ex.Message);
             }
         }
-      
+     
+        string query = "(SELECT ISNULL((SELECT TOP 1 id_razon FROM TRtrx WHERE id_tipo = " + result + " ORDER BY NEWID()), 0))";
+
+        SqlCommand command = new SqlCommand(query, connection);
+            object result = command.ExecuteScalar();
+
+
+
+
 
         private string GetRandomRazonId(SqlConnection connection)
         {
