@@ -27,7 +27,7 @@ namespace ProyectoNuevo
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace ProyectoNuevo
 
 
         {
-            SqlDataAdapter da = new SqlDataAdapter("select *from pr_transacciones ",conn);
+            SqlDataAdapter da = new SqlDataAdapter("select * from pr_transacciones;", conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             this.dataGridView1.DataSource = dt;
@@ -62,21 +62,21 @@ namespace ProyectoNuevo
 
                     for (int i = 1; i <= 100000; i++)
                     {
-                         int id= random.Next();
+                        int id = random.Next();
                         DateTime fecha = DateTime.Now.AddDays(-random.Next(365));
                         int comercio = random.Next(1000);
                         string tarjeta = GenerateRandomTarjeta();
                         decimal valor = random.Next(100, 10000) / 100.0m;
                         string tipotrx = GenerateRandomTipoTrx(connection);
-                        string pr_razon = GetRandomRazonId( connection);
+                        string pr_razon = GetRandomRazonId(connection);
                         string autoriza = GenerateRandomAutoriza();
-                        string id_tipo = GenerateRandomTipoTrx(connection); 
-                        string id_razones = GetRandomRazonId( connection);
+                        string id_tipo = GenerateRandomTipoTrx(connection);
+                        string id_razones = GetRandomRazonId(connection);
 
 
                         // Insertar el registro en la base de datos
-                        string query = "INSERT INTO pr_transacciones (pr_id, pr_fecha, pr_comercio, pr_tarjeta, pr_valor, pr_tipotrx, pr_razon, pr_autoriza, id_tipo, id_Razones) " +
-                            "VALUES (@pr_id, @pr_fecha, @pr_comercio, @pr_tarjeta, @pr_valor, @pr_tipotrx, @pr_razon, @pr_autoriza, @id_tipo, @id_Razones)";
+                        string query = "INSERT INTO pr_transacciones (pr_id, pr_fecha, pr_comercio, pr_tarjeta, pr_valor, pr_tipotrx, pr_razon, pr_autoriza) " +
+                            "VALUES (@pr_id, @pr_fecha, @pr_comercio, @pr_tarjeta, @pr_valor, @pr_tipotrx, @pr_razon, @pr_autoriza)";
 
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
@@ -103,11 +103,8 @@ namespace ProyectoNuevo
                 MessageBox.Show("Error al insertar los registros: " + ex.Message);
             }
         }
-     
-        string query = "(SELECT ISNULL((SELECT TOP 1 id_razon FROM TRtrx WHERE id_tipo = " + result + " ORDER BY NEWID()), 0))";
 
-        SqlCommand command = new SqlCommand(query, connection);
-            object result = command.ExecuteScalar();
+
 
 
 
@@ -115,7 +112,7 @@ namespace ProyectoNuevo
 
         private string GetRandomRazonId(SqlConnection connection)
         {
-            string query = "(SELECT ISNULL((SELECT TOP 1 id_razon FROM TRtrx WHERE id_tipo = "+GenerateRandomTipoTrx(connection)+ " ORDER BY NEWID()), 0))";
+            string query = "SELECT ISNULL((SELECT TOP 1 id_razon FROM TRtrx WHERE id_tipo = " + GenerateRandomTipoTrx(connection) + " ORDER BY NEWID()), 0);";
             Console.WriteLine(query);
             using (SqlCommand command = new SqlCommand(query, connection))
             {
@@ -132,7 +129,7 @@ namespace ProyectoNuevo
         }
         private string GenerateRandomTipoTrx(SqlConnection connection)
         {
-            string query = "(SELECT TOP 1 id from tipotrx order by NEWID()) ";
+            string query = "SELECT TOP 1 id from tipotrx order by NEWID() ";
             using (SqlCommand command = new SqlCommand(query, connection))
             {
 
