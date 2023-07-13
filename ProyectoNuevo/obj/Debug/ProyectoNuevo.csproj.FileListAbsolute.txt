@@ -9,3 +9,14 @@ C:\Users\usrTechsoft\source\repos\ProyectoNuevo\ProyectoNuevo\obj\Debug\Proyecto
 C:\Users\usrTechsoft\source\repos\ProyectoNuevo\ProyectoNuevo\obj\Debug\ProyectoNuevo.csproj.CoreCompileInputs.cache
 C:\Users\usrTechsoft\source\repos\ProyectoNuevo\ProyectoNuevo\obj\Debug\ProyectoNuevo.exe
 C:\Users\usrTechsoft\source\repos\ProyectoNuevo\ProyectoNuevo\obj\Debug\ProyectoNuevo.pdb
+C:\Users\usrTechsoft\Source\Repos\insertarJimenez\ProyectoNuevo\obj\Debug\ProyectoNuevo.csproj.AssemblyReference.cache
+C:\Users\usrTechsoft\Source\Repos\insertarJimenez\ProyectoNuevo\obj\Debug\ProyectoNuevo.csproj.SuggestedBindingRedirects.cache
+C:\Users\usrTechsoft\Source\Repos\insertarJimenez\ProyectoNuevo\obj\Debug\ProyectoNuevo.Form1.resources
+C:\Users\usrTechsoft\Source\Repos\insertarJimenez\ProyectoNuevo\obj\Debug\ProyectoNuevo.Properties.Resources.resources
+C:\Users\usrTechsoft\Source\Repos\insertarJimenez\ProyectoNuevo\obj\Debug\ProyectoNuevo.csproj.GenerateResource.cache
+C:\Users\usrTechsoft\Source\Repos\insertarJimenez\ProyectoNuevo\obj\Debug\ProyectoNuevo.csproj.CoreCompileInputs.cache
+C:\Users\usrTechsoft\source\repos\insertarJimenez\ProyectoNuevo\bin\Debug\ProyectoNuevo.exe.config
+C:\Users\usrTechsoft\source\repos\insertarJimenez\ProyectoNuevo\bin\Debug\ProyectoNuevo.exe
+C:\Users\usrTechsoft\source\repos\insertarJimenez\ProyectoNuevo\bin\Debug\ProyectoNuevo.pdb
+C:\Users\usrTechsoft\source\repos\insertarJimenez\ProyectoNuevo\obj\Debug\ProyectoNuevo.exe
+C:\Users\usrTechsoft\source\repos\insertarJimenez\ProyectoNuevo\obj\Debug\ProyectoNuevo.pdb
